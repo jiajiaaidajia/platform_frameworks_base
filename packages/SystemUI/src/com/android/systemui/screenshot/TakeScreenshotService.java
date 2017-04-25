@@ -55,7 +55,11 @@ public class TakeScreenshotService extends Service {
                 post(finisher);
                 return;
             }
-
+            /**
+             * 可以发现在在TakeScreenshotService类的定义中有一个Handler成员变量，
+             * 而我们在启动TakeScreentshowService的时候回发送一个异步消息，这样就会执行mHandler的handleMessage方法，
+             * 然后在handleMessage方法中我们创建了一个GlobalScreenshow对象，然后执行了takeScreenshot方法。
+            */
             if (mScreenshot == null) {
                 mScreenshot = new GlobalScreenshot(TakeScreenshotService.this);
             }

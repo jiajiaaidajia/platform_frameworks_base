@@ -603,6 +603,9 @@ class GlobalScreenshot {
 
     void takeScreenshot(Runnable finisher, boolean statusBarVisible, boolean navBarVisible) {
         mDisplay.getRealMetrics(mDisplayMetrics);
+        /**
+         * 可以看到这里后两个参数：statusBarVisible，navBarVisible是否可见，而这两个参数在我们PhoneWindowManager.takeScreenshot方法传递的
+         */
         takeScreenshot(finisher, statusBarVisible, navBarVisible, 0, 0, mDisplayMetrics.widthPixels,
                 mDisplayMetrics.heightPixels);
     }

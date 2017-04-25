@@ -5633,6 +5633,7 @@ public class PhoneWindowManager implements WindowManagerPolicy {
             if (mScreenshotConnection != null) {
                 return;
             }
+            //启动服务来截屏
             final ComponentName serviceComponent = new ComponentName(SYSUI_PACKAGE,
                     SYSUI_SCREENSHOT_SERVICE);
             final Intent serviceIntent = new Intent();
